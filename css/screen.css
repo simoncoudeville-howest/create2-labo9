@@ -2,25 +2,26 @@
   #FONTS
 \*------------------------------------*/
 
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
 @font-face {
-    font-family: "HK Grotesk Web";
+    font-family: "Clear Sans Web";
     font-weight: 200;
-    src: url("../fonts/hkgrotesk-light-webfont.woff2") format("woff2"),
-         url("../fonts/hkgrotesk-light-webfont.woff") format("woff");
+    src: url("../fonts/ClearSans-Light-webfont.woff") format("woff");
 }
 
 @font-face {
-    font-family: "HK Grotesk Web";
+    font-family: "Clear Sans Web";
     font-weight: 400;
-    src: url("../fonts/hkgrotesk-regular-webfont.woff2") format("woff2"),
-         url("../fonts/hkgrotesk-regular-webfont.woff") format("woff");
+    src: url("../fonts/ClearSans-Regular-webfont.woff") format("woff");
 }
 
 @font-face {
-    font-family: "HK Grotesk Web";
+    font-family: "Clear Sans Web";
     font-weight: 600;
-    src: url("../fonts/hkgrotesk-medium-webfont.woff2") format("woff2"),
-         url("../fonts/hkgrotesk-medium-webfont.woff") format("woff");
+    src: url("../ClearSans-Medium-webfont.woff") format("woff");
 }
 
 /*------------------------------------*\
@@ -34,10 +35,14 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 1.5;
-    font-family: "HK Grotesk Web", Helvetica, arial, sans-serif;
-    color: #202024;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: "Clear Sans Web", Helvetica, arial, sans-serif;
+    font-weight: 200;
+    color: #fff;
+    background-color: #061649;
+    background: linear-gradient(to bottom right, #0A257D, #061649);
+    background-attachment: fixed;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -49,21 +54,6 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    margin-top: 80px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 20px;
-        line-height: 1.6;
-    }
-
-    body {
-        margin-top: 136px;
-    }
-}
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -72,13 +62,13 @@ body {
  */
 
 ::-moz-selection {
-    background: #5051DB;
+    background: #0053FB;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: #5051DB;
+    background: #0053FB;
     color: white;
     text-shadow: none;
 }
@@ -107,7 +97,7 @@ img {
 h1,
 h2,
 h3 {
-    font-weight: 200;
+    font-weight: 400;
 }
 
 h1 {
@@ -184,18 +174,15 @@ hr {
 }
 
 a {
-    color: #5051DB;
+    color: #1195F7;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
-a:active {
-    color: #3E3EA8;
-}
-
+a:active,
 a:hover,
 a:focus {
-    color: #3E3EA8;
+    color: #8EC7FF;
 }
 
 /*------------------------------------*\
@@ -214,32 +201,10 @@ a:focus {
     padding: 24px 24px 0;
 }
 
-/* color modifiers */
-
-.o-row--neutral-x-light {
-    background-color: #F7F7FA;
-}
-
-.o-row--gradient-1 {
-    background: linear-gradient(to top right, #5051DB, #3887F7);
-    color: #fff;
-}
-
 /* size modifiers */
 
 .o-row--lg {
     padding: 48px 24px 24px;
-}
-
-/* fixed header */
-
-.o-row--header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    background-color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -259,12 +224,6 @@ a:focus {
     }
 }
 
-/* padding clear modifiers */
-
-.o-row--clear-top {
-    padding-top: 0;
-}
-
 /*
     Objects: Container
     ---
@@ -274,7 +233,7 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 71em; /* 79.5 * 16px = 1272px */
 }
 
 /*
@@ -284,7 +243,7 @@ a:focus {
 */
 
 .o-section {
-    overflow: auto;
+    overflow-x: hidden;
 }
 
 .o-section + .o-section {
@@ -436,6 +395,10 @@ a:focus {
   #COMPONENTS
 \*------------------------------------*/
 
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
 /*
     Component: Logo
     ---
@@ -444,16 +407,11 @@ a:focus {
 
 .c-logo {
     height: 32px;
+    display: flex;
 }
 
 .c-logo__symbol {
     height: 100%;
-}
-
-@media (min-width: 768px) {
-    .c-logo {
-        height: 40px;
-    }
 }
 
 /*
@@ -565,12 +523,10 @@ a:focus {
 */
 
 .c-nav {
-    font-size: 18px;
+    font-size: 13px;
     line-height: 24px;
-}
-
-.c-nav--meta {
-    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .c-nav__link {
@@ -583,29 +539,28 @@ a:focus {
 .c-nav__link,
 .c-nav__link:visited,
 .c-nav__link:active {
-    color: #202024;
-}
-
-.c-nav__link--meta,
-.c-nav__link--meta:visited,
-.c-nav__link--meta:active {
-    color: #6C6C75;
+    color: #fff;
 }
 
 .c-nav__link:hover,
 .c-nav__link:focus {
-    color: #5051db;
+    color: #8EC7FF;
 }
 
 @media (min-width: 768px) {
     .c-nav__list {
         display: flex;
-        margin-left: -16px;
-        margin-right: -16px;
+        align-items: center;
+        /* margin-left: -16px;
+        margin-right: -16px; */
     }
 
     .c-nav__link {
-        padding: 8px 16px;
+        padding: 12px 16px;
+    }
+
+    .c-nav__item--cta {
+        margin-left: 16px;
     }
 }
 
@@ -616,71 +571,17 @@ a:focus {
 */
 
 .c-lead {
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .c-lead--lg {
-    font-size: 20px;
-    line-height: 32px;
-}
-
-.c-lead--xl {
-    font-size: 26px;
-    line-height: 32px;
-}
-
-.c-lead--xxl {
     font-size: 32px;
     line-height: 40px;
 }
 
-.c-lead--xxxl {
-    font-size: 36px;
+.c-lead--xl {
+    font-size: 41px;
     line-height: 48px;
-}
-
-@media (min-width: 768px) {
-    .c-lead--lg {
-        font-size: 23px;
-        line-height: 32px;
-    }
-
-    .c-lead--xl {
-        font-size: 32px;
-        line-height: 40px;
-    }
-
-    .c-lead--xxl {
-        font-size: 41px;
-        line-height: 48px;
-    }
-
-    .c-lead--xxxl {
-        font-size: 52px;
-        line-height: 64px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .c-lead--lg {
-        font-size: 26px;
-        line-height: 36px;
-    }
-
-    .c-lead--xl {
-        font-size: 36px;
-        line-height: 48px;
-    }
-
-    .c-lead--xxl {
-        font-size: 52px;
-        line-height: 64px;
-    }
-
-    .c-lead--xxxl {
-        font-size: 66px;
-        line-height: 72px;
-    }
 }
 
 /*
@@ -754,58 +655,44 @@ a:focus {
     position: relative;
     display: inline-block;
     text-decoration: none;
-    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
     line-height: 24px;
     font-weight: 400;
-    padding: 4px 0;
+    padding: 16px 32px;
     transition: color .175s ease-in;
+    background: linear-gradient(to top right, #033AA7, #0053FB);
+    z-index: 0;
+}
+
+.c-link-cta::before {
+    content: '';
+    display: block;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .175s ease-in;
+    background: linear-gradient(to bottom left, #033AA7, #0053FB);
+    z-index: -1;
 }
 
 .c-link-cta,
 .c-link-cta:visited,
 .c-link-cta:active {
-    color: #7373F5;
-}
-
-.c-link-cta::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    background-color: #7373F5;
-    transform: scaleX(.5);
-    transform-origin: left;
-    transition-property: transform background-color;
-    transition-duration: .175s;
-    transition-timing-function: ease-in;
-}
-
-.c-link-cta:hover {
-    color: #3E3EA8;
-}
-
-.c-link-cta:hover::after {
-    transform: scaleX(1);
-    background-color: #3E3EA8;
-}
-
-/* inversed */
-
-.c-link-cta--inverse,
-.c-link-cta--inverse:visited,
-.c-link-cta--inverse:active {
     color: #fff;
 }
 
-.c-link-cta--inverse::after {
-    background-color: #fff;
+.c-link-cta:hover {
+    color: #fff;
 }
 
-.c-link-cta--inverse:hover::after {
-    background-color: #fff;
+.c-link-cta:hover::before {
+    opacity: 1;
 }
 
 /*------------------------------------*\
@@ -819,15 +706,16 @@ a:focus {
 */
 
 .u-color-primary-light {
-    color: #7373F5;
 }
 
 .u-color-primary-base {
-    color: #5051DB;
 }
 
 .u-color-primary-dark {
-    color: #3E3EA8;
+}
+
+.u-color-secondary-base {
+    color: #8EC7FF;
 }
 
 /*
@@ -875,7 +763,7 @@ a:focus {
 }
 
 .u-max-width-sm {
-    max-width: 36em !important;
+    max-width: 32em !important;
 }
 
 .u-max-width-md {
@@ -887,7 +775,7 @@ a:focus {
 }
 
 .u-max-width-xl {
-    max-width: 75em !important;
+    max-width: 70em !important;
 }
 
 .u-max-width-none {
