@@ -158,7 +158,6 @@ figcaption {
     font-size: 12px;
     line-height: 16px;
     margin-top: 8px;
-    color: #3C3C42;
 }
 
 hr {
@@ -206,7 +205,6 @@ a:focus {
 
 .o-row--neutral-xxxx-light {
     background-color: #fff;
-    color: #000;
 }
 
 @media (min-width: 768px) {
@@ -603,8 +601,9 @@ a:focus {
     margin-top: 8px;
     padding-left: 6px;
     padding-top: 1px;
-    border: 2px solid #5051DB;
+    border: 2px solid #0053FB;
     border-width: 0 0 0 2px;
+    color: #474D59;
 }
 
 @media (min-width: 768px) {
