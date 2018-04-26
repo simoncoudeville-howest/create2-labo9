@@ -435,14 +435,6 @@ a:focus {
     .c-header__nav {
         display: block;
     }
-
-    .c-header__nav--main {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin-top: 12px;
-    }
 }
 
 /*
@@ -549,7 +541,7 @@ a:focus {
     text-shadow: 0 0 8px #8EC7FF;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .c-nav__list {
         display: flex;
         align-items: center;
@@ -655,7 +647,6 @@ a:focus {
 */
 
 .c-link-cta {
-    position: relative;
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
